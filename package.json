@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/aasantoso/projectCookies#readme",
   "dependencies": {
+    "bcrypt": "^3.0.1",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.39.0"

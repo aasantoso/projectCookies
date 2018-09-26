@@ -1,4 +1,6 @@
 'use strict';
+const bcrypt = require('bcrypt')
+
 module.exports = (sequelize, DataTypes) => {
     const Customer = sequelize.define('Customer', {
         name: DataTypes.STRING,
@@ -12,7 +14,14 @@ module.exports = (sequelize, DataTypes) => {
                 }
             }
         }
-    }, {});
+    }, {
+        hooks: {
+            beforeCreate: (customer, option) => {
+                var hash = bcrypt.hashSync(customer.password, 10)
+                customer.password = hash
+            }
+        }
+    });
     Customer.associate = function(models) {
         // associations can be defined here
     };
