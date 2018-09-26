@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COOKIES!</title>
+</head>
+
+<body>
+    <h1>GRAB COOKIES FOR FREE!!</h1>
+    <table>
+        <tr>
+            <th>Cookies</th>
+            <th>Description</th>
+            <th>Stock</th>
+            <th>Action</th>
+        </tr>
+        <% cookies.forEach(cookie => { %>
+            <tr>
+                <td>
+                    <%= cookie.name %>
+                </td>
+                <td>
+                    <%= cookie.description %>
+                </td>
+                <td>
+                    <%= cookie.stock %>
+                </td>
+                <td><a href=""><button>Order +1</button></a></td>
+            </tr>
+            <% }) %>
+    </table>
+</body>
+
+</html>
