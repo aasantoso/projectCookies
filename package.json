@@ -1,0 +1,26 @@
+{
+  "name": "projectcookies",
+  "version": "1.0.0",
+  "description": "giving out cooking for final project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aasantoso/projectCookies.git"
+  },
+  "author": "aasantoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aasantoso/projectCookies/issues"
+  },
+  "homepage": "https://github.com/aasantoso/projectCookies#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.39.0"
+  }
+}
