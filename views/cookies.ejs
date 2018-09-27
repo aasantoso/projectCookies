@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COOKIES!</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/cookie.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="jumbotron my-4">
+            <h1 class="display-3">Hi Cookie Lover!</h1>
+            <p class="lead">Thanks for coming to COOKIE FACTORY. We love making cookies as much as you like to munch 'em. Grab any cookies you want and we will deliver it by mail!</p>
+            <p class="lead">Total Cookies in the bag:<b>
+                    <%= quantity %></b></p>
+            <a href="/order" class="btn btn-primary btn-lg">Ready to get your cookies?</a>
+        </header>
+
+        <div class="row text-center">
+            <% cookies.forEach(cookie => { %>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card">
+                        <% if(cookie.id == 1) { %>
+                            <img class="card-img-top" src="/public/src/1.jpg">
+                            <% } else if (cookie.id == 2) { %>
+                                <img class="card-img-top" src="/public/src/2.jpg">
+                                <% } else if (cookie.id == 3) { %>
+                                    <img class="card-img-top" src="/public/src/3.jpg">
+                                    <% } else if (cookie.id == 4) { %>
+                                        <img class="card-img-top" src="/public/src/4.jpg">
+                                        <% } else if (cookie.id == 5) { %>
+                                            <img class="card-img-top" src="/public/src/5.jpg">
+                                            <% } %>
+
+                                                <div class="card-body">
+                                                    <h4 class="card-title">
+                                                        <%= cookie.name %>
+                                                    </h4>
+                                                    <p class="card-text">
+                                                        <%= cookie.description %>
+                                                    </p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <a href="/order/add/<%=cookie.id%>" class="btn btn-primary">Grab One</a>
+                                                </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+        <script src="/public/js/bootstrap.bundle.min.js"></script>
+        <script src="/public/js/jquery.min.js"></script>
+</body>
+
+</html>
