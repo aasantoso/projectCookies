@@ -15,7 +15,8 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             quantity: {
-                type: Sequelize.INTEGER
+                type: Sequelize.INTEGER,
+                defaultValue: 0
             },
             createdAt: {
                 type: Sequelize.DATE,

@@ -23,7 +23,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     });
     Customer.associate = function(models) {
-        // associations can be defined here
+        Customer.belongsToMany(models.Cookie, {
+            through: 'Order'
+        })
     };
     return Customer;
 };

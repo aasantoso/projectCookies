@@ -14,8 +14,6 @@
         <tr>
             <th>Cookies</th>
             <th>Description</th>
-            <th>Stock</th>
-            <th>Action</th>
         </tr>
         <% cookies.forEach(cookie => { %>
             <tr>
@@ -26,12 +24,19 @@
                     <%= cookie.description %>
                 </td>
                 <td>
-                    <%= cookie.stock %>
+                    <a href="/order/add/<%=cookie.id%>">
+                        <input type="button" value="Grab One">
+                    </a>
                 </td>
-                <td><a href=""><button>Order +1</button></a></td>
             </tr>
             <% }) %>
     </table>
+
+    <h3>Total Cookies in the bag:
+        <b>
+            <%= quantity %></b>
+    </h3>
+    <a href="/order"><button>Ready to check out?</button></a>
 </body>
 
 </html>
