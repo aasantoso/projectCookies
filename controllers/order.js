@@ -29,7 +29,6 @@ class Controller {
                 if (customer.order.length === 0) {
                     let tempOrder = {}
                     tempOrder.name = cookie.name
-                    tempOrder.stock = cookie.stock - 1
                     tempOrder.quantity = 1
                     tempOrder.CookiesId = Number(req.params.CookiesId)
                     tempOrder.CustomerId = customer.id
@@ -37,15 +36,15 @@ class Controller {
                 } else {
                     let check = true
                     for (let i = 0; i < customer.order.length; i++) {
-                        customer.order[i].stock -= 1
-                        customer.order[i].quantity += 1
-                        customer.order[i].CookiesId = Number(req.params.CookiesId)
-                        check = false
+                        if (req.params.CookiesId == username.order[i].CookiesId) {
+                            customer.order[i].quantity += 1
+                            customer.order[i].CookiesId = Number(req.params.CookiesId)
+                            check = false
+                        }
                     }
                     if (check) {
                         let tempOrder = {}
                         tempOrder.name = cookie.name
-                        tempOrder.stock = cookie.stock - 1
                         tempOrder.quantity = 1
                         tempOrder.CookiesId = Number(req.params.CookiesId)
                         tempOrder.CustomerId = customer.id
