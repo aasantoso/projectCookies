@@ -10,20 +10,26 @@
 </head>
 
 <body>
-    <div class="loginbox">
-        <img src="/public/src/lock.png" class="avatar">
-        <h1>Register Here</h1>
-        <form action="/customer/register" method="POST">
-            <p>Name:</p>
-            <input type="text" name="name" placeholder="Enter Name"><br>
-            <p>Password:</p>
-            <input type="password" name="password" placeholder="Enter Password"><br>
-            <p>Email:</p>
-            <input type="text" name="email" placeholder="Enter Email"><br>
-            <input class="btn" type="submit" name="" value="Register">
-        </form>
+    <% if (typeof err !== "undefined") { %>
+        <div class="alert alert-danger">
+            <strong>Oops!</strong>
+            <%= err %>
+        </div>
+        <% } %>
+            <div class="loginbox">
+                <img src="/public/src/lock.png" class="avatar">
+                <h1>Register Here</h1>
+                <form action="/customer/register" method="POST">
+                    <p>Name:</p>
+                    <input type="text" name="name" placeholder="Enter Name"><br>
+                    <p>Password:</p>
+                    <input type="password" name="password" placeholder="Enter Password"><br>
+                    <p>Email:</p>
+                    <input type="text" name="email" placeholder="Enter Email"><br>
+                    <input class="btn" type="submit" name="" value="Register">
+                </form>
 
-    </div>
+            </div>
 
 </body>
 

@@ -11,6 +11,16 @@ module.exports = (sequelize, DataTypes) => {
                 isEmail: {
                     args: true,
                     msg: 'Invalid email'
+                },
+                isUnique: function(email, callback) {
+                    Customer.findOne({
+                            where: {
+                                email: email
+                            }
+                        })
+                        .then(notAvailable => {
+                            notAvailable ? callback('duplicate email') : callback()
+                        })
                 }
             }
         }

@@ -23,7 +23,9 @@ class Controller {
                     res.send('Try again')
                 }
             })
-            .catch(err => res.send(err))
+            .catch(err => res.render('index', {
+                err
+            }))
     }
 
     static register(req, res) {
@@ -33,7 +35,9 @@ class Controller {
                 email: req.body.email
             })
             .then(() => res.redirect('/'))
-            .catch(err => res.send(err))
+            .catch(err => res.render('register', {
+                err
+            }))
     }
 }
 
