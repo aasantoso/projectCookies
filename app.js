@@ -30,4 +30,4 @@ app.use('/order', orderRoute)
 
 app.use('/public', express.static('public'))
 
-app.listen(`Server Starts on ${port}`)
+app.listen(port)
