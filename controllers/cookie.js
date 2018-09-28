@@ -8,12 +8,20 @@ class Controller {
                     ['id', 'ASC']
                 ]
             })
-            .then(data => {
-                var quantity = 0;
-                res.render('cookies', {
-                    cookies: data,
-                    quantity: JSON.stringify(quantity)
-                })
+            .then(listCookie => {
+                let customer = req.session.currentUser
+                if (customer) {
+                    let quantity = 0
+                    for (let i = 0; i < customer.order.length; i++) {
+                        quantity += customer.order[i].quantity
+                    }
+                    res.render('cookies', {
+                        cookies: listCookie,
+                        quantity: JSON.stringify(quantity)
+                    })
+                } else {
+                    res.redirect('/')
+                }
             })
             .catch(err => console.log(err))
     }

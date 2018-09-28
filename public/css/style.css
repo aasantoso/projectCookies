@@ -74,6 +74,22 @@ input[type="password"] {
     color: #000;
 }
 
+.loginbox input[type="button"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.loginbox input[type="button"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
 .qty {
     width: 40px;
     height: 25px;
@@ -88,4 +104,26 @@ input[type="password"] {
 .loginbox input.qtyminus {
     width: 25px;
     height: 25px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-danger hr {
+    border-top-color: #f1b0b7;
+}
+
+.alert-danger .alert-link {
+    color: #491217;
+}
+
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
 }
