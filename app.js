@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const port = process.env.PORT || 3000;
 
 //routes
 const indexRoute = require('./routes/index.js')
@@ -29,4 +30,4 @@ app.use('/order', orderRoute)
 
 app.use('/public', express.static('public'))
 
-app.listen(3000)
+app.listen(`Server Starts on ${port}`)
