@@ -74,6 +74,22 @@ input[type="password"] {
     color: #000;
 }
 
+.loginbox input[type="button"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.loginbox input[type="button"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+
 .qty {
     width: 40px;
     height: 25px;

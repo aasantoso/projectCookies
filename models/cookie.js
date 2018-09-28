@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     }, {});
     Cookie.associate = function(models) {
         Cookie.belongsToMany(models.Customer, {
-            through: 'Order',
+            through: models.Order,
             foreignKey: 'CookiesId'
         })
 

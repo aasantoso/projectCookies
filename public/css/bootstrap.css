@@ -284,7 +284,8 @@ select {
 button,
 html [type="button"],
 [type="reset"],
-[type="submit"] {
+[type="submit"],
+[type="button"] {
     -webkit-appearance: button;
 }
 

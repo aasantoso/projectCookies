@@ -6,30 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>COOKIES!</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/cookie.css">
 </head>
 
 <body>
-    <table>
-        <tr>
-            <th>Cookies</th>
-            <th>Quantity</th>
-        </tr>
-        <% for(var i=0; i<customer.order.length; i++) { %>
-            <tr>
-                <td>
-                    <%= i+1 %>
-                </td>
-                <td>
-                    <%= customer.order[i].name %>
-                </td>
-                <td>
-                    <%= customer.order[i].quantity</td>
-      </tr>
-    <% } %>
-    </table>
-    <form action="/order" method="POST">
-        <input type="submit" value="Checkout">
-    </form>
+
+    <div class="container">
+        <header class="jumbotron my-4">
+            <h1 class="display-3">Thank you for your order!</h1>
+            <p class="lead">Cookies make the world a better place! It's much harder to be sad while eating a cookie!</p>
+            <a href="/cookie" class="btn btn-primary btn-lg">Click here if you want more!</a>
+        </header>
+
+    </div>
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+    <script src="/public/js/jquery.min.js"></script>
 </body>
 
 </html>

@@ -19,14 +19,10 @@ class Controller {
 
     static addCookie(req, res) {
         let customer = req.session.currentUser
-        Model.Cookie.findOne({
-                include: [Model.Order],
-                where: {
-                    id: req.params.CookiesId
-                }
-            })
+        Model.Cookie.findById(req.params.CookiesId)
             .then(cookie => {
-                if (customer.order.length === 0) {
+                let index = customer.order.findIndex(data => data.CookiesId === cookie.id)
+                if (index == -1) {
                     let tempOrder = {}
                     tempOrder.name = cookie.name
                     tempOrder.quantity = 1
@@ -34,25 +30,12 @@ class Controller {
                     tempOrder.CustomerId = customer.id
                     customer.order.push(tempOrder)
                 } else {
-                    let check = true
-                    for (let i = 0; i < customer.order.length; i++) {
-                        if (req.params.CookiesId == username.order[i].CookiesId) {
-                            customer.order[i].quantity += 1
-                            customer.order[i].CookiesId = Number(req.params.CookiesId)
-                            check = false
-                        }
-                    }
-                    if (check) {
-                        let tempOrder = {}
-                        tempOrder.name = cookie.name
-                        tempOrder.quantity = 1
-                        tempOrder.CookiesId = Number(req.params.CookiesId)
-                        tempOrder.CustomerId = customer.id
-                        customer.order.push(tempOrder)
-                    }
+                    customer.order[index].quantity += 1
                 }
                 res.redirect('/cookie')
             })
+            .catch(err => console.log(err))
+
     }
 
 }
