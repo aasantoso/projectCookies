@@ -7,7 +7,7 @@ class Controller {
         for (let i = 0; i < customer.order.length; i++) {
             listOrder.push({
                 CustomerId: customer.order[i].CustomerId,
-                CookiesId: customer.order[i].BookId,
+                CookiesId: customer.order[i].CookiesId,
                 quantity: customer.order[i].quantity
             })
         }

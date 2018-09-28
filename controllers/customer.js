@@ -20,7 +20,7 @@ class Controller {
                     req.session.currentUser = customer
                     res.redirect('/cookie')
                 } else {
-                    res.send('Try again')
+                    res.render('index')
                 }
             })
             .catch(err => res.render('index', {

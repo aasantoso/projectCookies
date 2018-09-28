@@ -59,19 +59,23 @@
                                         <img class="card-img-top" src="/public/src/4.jpg">
                                         <% } else if (cookie.id == 5) { %>
                                             <img class="card-img-top" src="/public/src/5.jpg">
-                                            <% } %>
+                                            <% } else if (cookie.id == 7) { %>
+                                                <img class="card-img-top" src="/public/src/6.jpg">
+                                                <% } else if (cookie.id == 8) { %>
+                                                    <img class="card-img-top" src="/public/src/7.jpg">
+                                                    <% } %>
 
-                                                <div class="card-body">
-                                                    <h4 class="card-title">
-                                                        <%= cookie.name %>
-                                                    </h4>
-                                                    <p class="card-text">
-                                                        <%= cookie.description %>
-                                                    </p>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <a href="/order/add/<%=cookie.id%>" class="btn btn-primary">Grab One</a>
-                                                </div>
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">
+                                                                <%= cookie.name %>
+                                                            </h4>
+                                                            <p class="card-text">
+                                                                <%= cookie.description %>
+                                                            </p>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <a href="/order/add/<%=cookie.id%>" class="btn btn-primary">Grab One</a>
+                                                        </div>
                     </div>
                 </div>
                 <% }) %>
