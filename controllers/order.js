@@ -13,7 +13,7 @@ class Controller {
         }
 
         Model.Order.bulkCreate(listOrder)
-            .then(data => res.redirect('/cookie'))
+            .then(data => res.render('done'))
             .catch(err => console.log(err))
     }
 
@@ -37,7 +37,6 @@ class Controller {
             .catch(err => console.log(err))
 
     }
-
 }
 
 module.exports = Controller
